@@ -23,7 +23,7 @@ def predict():
         tokenized = text_tokenizer([text_input])
         prediction = predict_spam(tokenized)
 
-        result = "This email is spam." if prediction[0] == 1 else "This email is not spam."
+        result = "This email is spam." if prediction[0] == 0 else "This email is not spam."
         return render_template("index.html", text=f"{result}\n\n{text_input}")
 
     except Exception as e:
