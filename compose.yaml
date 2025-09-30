@@ -1,0 +1,13 @@
+services:
+  web:
+    build:
+      context: app
+      dockerfile: Dockerfile
+      target: builder
+
+    stop_signal: SIGINT
+    
+    ports:
+      - '8000:8000' # host_port:container_port
+
+  
